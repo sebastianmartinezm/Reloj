@@ -1,0 +1,31 @@
+horizontal_position = 0
+horizontal_position_minute = 0
+horizontal_position_hour = 0
+def setup():
+    size(500,300)
+def draw():
+    global horizontal_position
+    global horizontal_position_minute
+    global horizontal_position_hour
+    background(175)
+    fill(map(second(), 0, 59, 255, 0))
+    ellipse(horizontal_position,80,50,50,)
+    horizontal_position = horizontal_position + 1
+    if horizontal_position > width:
+        horizontal_position = 0
+    else: 
+        horizontal_position = map(second(), 0, 59, 0, width)
+    fill(map(minute(), 0, 59, 0, 255))
+    ellipse(horizontal_position_minute,150,50,50,)
+    horizontal_position_minute =+ 1
+    if horizontal_position_minute > width:
+        horizontal_position_minute = 0
+    else: 
+        horizontal_position_minute = map(minute(), 0, 59, 0, width)
+    fill(map(hour(), 0, 59, 255, 0))
+    ellipse(horizontal_position_hour,220,50,50,)
+    horizontal_position_hour =+ 1
+    if horizontal_position_hour > width:
+        horizontal_position_hour = 0
+    else: 
+        horizontal_position_hour = map(hour(), 0, 24, 0, width)
