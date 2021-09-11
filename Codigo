@@ -1,11 +1,13 @@
 hp = 0
 hpm = 0
+hph = 0
 def setup():
     size(500,300)
     
 def draw():
     global hp
     global hpm
+    global hph
     background(175)
     fill(map(second(), 0, 59, 255, 0))
     ellipse(hp,80,50,50,)
@@ -15,10 +17,18 @@ def draw():
     else: 
         hp = map(second(), 0, 59, 0, width)
         
-    fill(map(minute(), 0, 59, 255, 0))
+    fill(map(minute(), 0, 59, 0, 255))
     ellipse(hpm,150,50,50,)
     hpm =+ 1
     if hpm > width:
         hpm = 0
     else: 
         hpm = map(minute(), 0, 59, 0, width)
+        
+    fill(map(hour(), 0, 59, 255, 0))
+    ellipse(hph,220,50,50,)
+    hph =+ 1
+    if hph > width:
+        hph = 0
+    else: 
+        hph = map(hour(), 0, 24, 0, width)
