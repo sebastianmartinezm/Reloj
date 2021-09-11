@@ -1,20 +1,24 @@
-vp = 90
 hp = 0
-cm = 200
-ch = 250
+hpm = 0
 def setup():
-    size(500,270)
+    size(500,300)
     
 def draw():
-    global vp
     global hp
+    global hpm
     background(175)
-
     fill(map(second(), 0, 59, 255, 0))
-    ellipse(hp,vp,50,50,)
-    
+    ellipse(hp,80,50,50,)
     hp = hp + 1
     if hp > width:
         hp = 0
     else: 
         hp = map(second(), 0, 59, 0, width)
+        
+    fill(map(minute(), 0, 59, 255, 0))
+    ellipse(hpm,150,50,50,)
+    hpm =+ 1
+    if hpm > width:
+        hpm = 0
+    else: 
+        hpm = map(minute(), 0, 59, 0, width)
